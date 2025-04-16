@@ -1,0 +1,2 @@
+ckpt_path: 'models/model/lightning_logs/credit_risk_model/version_13/checkpoints/epoch=79-step=3600.ckpt'
+params_path: 'models/model/lightning_logs/credit_risk_model/version_13/hparams.yaml'

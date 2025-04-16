@@ -1,0 +1,7 @@
+# Counterfactual explanation parameters
+lambda_param: 1.0    # trade-off coefficient between distance & classification loss
+alpha_param: 10.0    # weight for integer penalty
+lr: 0.01            # learning rate for gradient descent
+max_steps: 500      # max optimization steps
+temperature: 0.5    # Gumbel-softmax temperature
+distance_metric: l2  # distance metric 'l2' or 'l1'
