@@ -1,30 +1,26 @@
-import sys
-import os
-
 from src.model import get_model, predict
 import torch
 
 def test_model():
     print("\n=== Testing Model Loading ===")
-    # Get the model and its device
     model, device = get_model()
     print(f"Model loaded successfully on device: {device}")
-    print(f"Model architecture: {model.model}")
+    print(f"Model architecture:\n{model.model}")
 
     # Test input data
-    test_input = [
-        22,                     # person_age
-        59000,                  # person_income
-        'RENT',                 # person_home_ownership
-        123.0,                  # person_emp_length
-        'PERSONAL',             # loan_intent
-        'D',                    # loan_grade
-        35000,                  # loan_amnt
-        16.02,                  # loan_int_rate
-        0.59,                   # loan_percent_income
-        'Y',                    # cb_person_default_on_file
-        3                       # cb_person_cred_hist_length
-    ]
+    test_input = {
+        'person_age': 22,
+        'person_income': 59000,
+        'person_home_ownership': 'RENT',
+        'person_emp_length': 123.0,
+        'loan_intent': 'PERSONAL',
+        'loan_grade': 'D',
+        'loan_amnt': 35000,
+        'loan_int_rate': 16.02,
+        'loan_percent_income': 0.59,
+        'cb_person_default_on_file': 'Y',
+        'cb_person_cred_hist_length': 3
+    }
 
     print("\n=== Testing Model Prediction ===")
     print("Test input:", test_input)

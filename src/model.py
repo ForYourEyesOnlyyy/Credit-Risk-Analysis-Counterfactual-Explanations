@@ -5,20 +5,12 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import yaml
-
-from dotenv import load_dotenv
 from src.data import transform
-import os
 
-load_dotenv()
+config_path = 'configs/models.yaml'
 
-project_root = os.getenv('PYTHONPATH')
-
-model_config_path = f'{project_root}/configs/model.yaml'
-
-def get_model_config():
-    with open(model_config_path, 'r') as file:
-        return yaml.safe_load(file)
+with open(config_path, 'r') as file:
+    config = yaml.safe_load(file)
 
 pos_weight = 2.0
 criterion = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(pos_weight))
@@ -80,9 +72,13 @@ def get_model():
         model (CreditRiskModel): The loaded model.
         device (torch.device): The device on which the model is located.
     """
-    model_config = get_model_config()
-    ckpt_path = model_config['ckpt_path']
-    params_path= model_config['params_path']
+    ckpt_path = config['model_ckpt_path']
+    params_path = config['model_params_path']
+    
+    # Log paths for debugging
+    print(f"Loading model from: {ckpt_path}")
+    print(f"Loading params from: {params_path}")
+    
     model = CreditRiskModel.load_from_checkpoint(ckpt_path, hparams_file=params_path)
     return model, model.device
 
