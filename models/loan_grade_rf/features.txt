@@ -1,5 +1,0 @@
-loan_int_rate
-loan_percent_income
-cb_person_cred_hist_length
-cb_person_default_on_file_Y
-person_emp_length

@@ -13,7 +13,7 @@ numerical_features:
   
   person_emp_length:
     min: 0
-    max: 50
+    max: 80
     type: int
     description: "Employment length in years"
   
@@ -25,15 +25,10 @@ numerical_features:
   
   loan_int_rate:
     min: 1.0
-    max: 50.0
+    max: 100.0
     type: float
     description: "Interest rate in percentage"
   
-  loan_percent_income:
-    min: 0.0
-    max: 85.0
-    type: float
-    description: "Loan to income ratio in percentage"
   
   cb_person_cred_hist_length:
     min: 0
@@ -51,11 +46,7 @@ categorical_features:
     allowed_values: ["DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
     type: str
     description: "Purpose of the loan"
-  
-  loan_grade:
-    allowed_values: ["A", "B", "C", "D", "E", "F", "G"]
-    type: str
-    description: "Loan grade assigned by the lender"
+
   
   cb_person_default_on_file:
     allowed_values: ["N", "Y"]
