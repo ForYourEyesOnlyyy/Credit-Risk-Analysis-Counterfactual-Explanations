@@ -11,17 +11,11 @@ from src.data import generate_mask, build_one_hot_groups, filter_one_hot_groups,
 from src.utils import recalculate_scaled, soft_round, init_logits_from_original, gumbel_softmax_sample
 
 import yaml
-import os
 
-load_dotenv()
+config_path = f'configs/counterfactual_explanations.yaml'
 
-project_root = os.getenv('PYTHONPATH')
-
-counterfactual_explanations_config_path = f'{project_root}/configs/counterfactual_explanations.yaml'
-
-def get_counterfactual_explanations_config():
-    with open(counterfactual_explanations_config_path, 'r') as file:
-        return yaml.safe_load(file)
+with open(config_path, 'r') as file:
+        config =  yaml.safe_load(file)
 
 
 
@@ -149,10 +143,8 @@ def counterfactual_explanation(
     y_original):
     """
     Generate a counterfactual explanation for a given data point.
-    NOTE that X_original is not scaled, it is the original data point.
+    NOTE that X_original is not scaled, it is the original data point(dictionary).
     """
-
-    config = get_counterfactual_explanations_config()
 
     X_original = transform(X_original)
     scaler = get_scaler()
