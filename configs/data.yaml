@@ -38,3 +38,8 @@ optimizable_ordinal_columns: ['person_home_ownership']
 optimizable_categories: ['loan_intent']
 
 recalc_params_matrix: [['person_income', 'loan_amnt', 'loan_percent_income',]]
+
+loan_grading:
+  indices: [1, 6, 7, 10]
+  features: ['person_income', 'loan_amnt', 'loan_int_rate', 'loan_percent_income']
+  grades: ['A', 'B', 'C', 'D', 'E', 'F', 'G']

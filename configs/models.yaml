@@ -1,0 +1,8 @@
+loan_grader_model_path: 'models/loan_grader/loan_grader.pkl'
+
+one_hot_encoder_path: 'models/encoder/encoder.pkl'
+
+scaler_path: 'models/scaler/scaler.pkl'
+
+model_ckpt_path: 'models/model/lightning_logs/credit_risk_model/version_13/checkpoints/epoch=79-step=3600.ckpt'
+model_params_path: 'models/model/lightning_logs/credit_risk_model/version_13/hparams.yaml'
