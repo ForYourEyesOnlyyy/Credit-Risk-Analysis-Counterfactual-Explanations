@@ -1,0 +1,63 @@
+numerical_features:
+  person_age:
+    min: 18
+    max: 90
+    type: int
+    description: "Age of the applicant"
+  
+  person_income:
+    min: 1
+    max: 10000000
+    type: int
+    description: "Annual income in dollars"
+  
+  person_emp_length:
+    min: 0
+    max: 50
+    type: int
+    description: "Employment length in years"
+  
+  loan_amnt:
+    min: 0
+    max: 1000000
+    type: int
+    description: "Loan amount in dollars"
+  
+  loan_int_rate:
+    min: 1.0
+    max: 50.0
+    type: float
+    description: "Interest rate in percentage"
+  
+  loan_percent_income:
+    min: 0.0
+    max: 85.0
+    type: float
+    description: "Loan to income ratio in percentage"
+  
+  cb_person_cred_hist_length:
+    min: 0
+    max: 50
+    type: int
+    description: "Credit history length in years"
+
+categorical_features:
+  person_home_ownership:
+    allowed_values: ["RENT", "MORTGAGE", "OWN", "OTHER"]
+    type: str
+    description: "Home ownership status"
+  
+  loan_intent:
+    allowed_values: ["DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "PERSONAL", "VENTURE"]
+    type: str
+    description: "Purpose of the loan"
+  
+  loan_grade:
+    allowed_values: ["A", "B", "C", "D", "E", "F", "G"]
+    type: str
+    description: "Loan grade assigned by the lender"
+  
+  cb_person_default_on_file:
+    allowed_values: ["N", "Y"]
+    type: str
+    description: "Previous default history" 

@@ -1,2 +1,0 @@
-model: models/loan_grade_rf/model.joblib
-preprocessing: models/loan_grade_rf/preprocessing.joblib

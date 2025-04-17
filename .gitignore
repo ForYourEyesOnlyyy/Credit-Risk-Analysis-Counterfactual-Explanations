@@ -181,3 +181,5 @@ data/processed/*.csv
 
 # Pytorch Lightning logs
 models/model/lightning_logs
+
+models/loan_grader
