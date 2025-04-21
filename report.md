@@ -299,8 +299,50 @@ The result is a valid category shift, suitable for generating counterfactuals in
 | Frozen features           | Should not change                      | Gradient masking                         |
 
 ---
+## 9. Technical Implementation
 
-## 9. Conclusion
+The practical implementation of the concepts discussed in this report can be explored through our open-source repository. The repository contains all the necessary code, configurations, datasets, and interactive notebooks required for replicating our results.
+
+**GitHub Repository:**  
+[Insert your GitHub repository link here]
+
+### Repository Structure
+
+The repository is structured clearly to facilitate easy navigation and reproducibility of the results:
+
+![Repository Structure](repo_structure.png)
+
+### Notebooks
+
+The notebook `counterfactual_explanations.ipynb` provides an interactive and detailed step-by-step walkthrough of the counterfactual generation process, illustrating clearly how each technique from gradient masking to Gumbel-softmax is applied.
+
+![](imgs/cf_notebook_1.png)
+![](imgs/cf_notebook_2.png)
+
+### Model Training Visualization
+
+During the training phase, we monitored the model's performance metrics using TensorBoard, enabling us to fine-tune the hyperparameters and verify convergence effectively.
+
+![TensorBoard Screenshot](imgs/tensorboard_experiments.png)
+
+### Deployment
+To make our approach interactive and accessible, we have implemented a deployment pipeline using Streamlit. After obtaining the trained model weights and updating configuration files, users can deploy the application locally by running:
+
+```bash
+bash deploy.sh
+```
+
+This will launch a Streamlit app that enables interactive exploration of counterfactual explanations.
+
+![](imgs/app_UI1.png)
+
+![](imgs/app_UI2.png)
+
+The interactive deployment provides users with an intuitive interface to explore how changes in feature values affect predictions, thus demonstrating the practical applicability and interpretability of our method.
+
+---
+
+## 10. Conclusion
 
 This case study demonstrates how to go from a naive counterfactual optimizer to a **realistic, interpretable system** that respects domain logic and data semantics.
 
